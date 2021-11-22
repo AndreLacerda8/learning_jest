@@ -1,0 +1,35 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js --igonre __tests__",
+    "sequelize": "sequelize init",
+    "create-migration": "sequelize migration:create --name=create-users",
+    "run-migration": "sequelize db:migrate",
+    "init-jest": "jest --init",
+    "pretest": "NODE_ENV=test sequelize db:migrate",
+    "test": "jest",
+    "posttest": "NODE_ENV=test sequelize db:migrate:undo:all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "factory-girl": "^5.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "sequelize": "^6.12.0-alpha.1",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.3.0",
+    "supertest": "^6.1.6"
+  }
+}
